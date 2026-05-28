@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="澳大利亚墨尔本留学生生存模拟器：一款中文互动网页小游戏。">
+  <title>澳大利亚墨尔本留学生生存模拟器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="home-screen" class="screen active">
+      <div class="cover-card">
+        <div class="sticker-row" aria-hidden="true">
+          <span>☕️</span>
+          <span>🚋</span>
+          <span>📚</span>
+          <span>🌧️</span>
+        </div>
+        <p class="eyebrow">Melbourne Week 7 Mini Game</p>
+        <h1>澳大利亚墨尔本留学生生存模拟器</h1>
+        <p class="intro">用 7 天平衡学习、体力、预算、心情、社交和压力。你会成为 Canvas 传说，还是 deadline 幸存者？</p>
+
+        <div id="last-ending" class="last-ending hidden" aria-live="polite"></div>
+
+        <label class="input-label" for="player-name">你的名字</label>
+        <input id="player-name" class="text-input" type="text" maxlength="16" placeholder="不填也可以，会叫你留学生">
+
+        <fieldset class="role-field">
+          <legend>选择你的留学生人格</legend>
+          <div id="role-options" class="role-grid"></div>
+        </fieldset>
+
+        <button id="start-button" class="primary-button" type="button">开始这一周</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen">
+      <div class="top-bar">
+        <div>
+          <p id="day-label" class="eyebrow">第 1 天 / 星期一</p>
+          <h2 id="event-title">事件标题</h2>
+        </div>
+        <span id="role-badge" class="soft-badge">留学生</span>
+      </div>
+
+      <article class="event-card">
+        <div id="event-icon" class="event-icon" aria-hidden="true">📚</div>
+        <p id="event-description" class="event-description"></p>
+        <div id="options" class="option-list"></div>
+      </article>
+
+      <section id="result-card" class="result-card hidden" aria-live="polite">
+        <p class="result-kicker">选择结果</p>
+        <h3 id="result-title"></h3>
+        <p id="result-description"></p>
+        <div id="delta-list" class="delta-list"></div>
+        <button id="next-button" class="primary-button" type="button">进入下一天</button>
+      </section>
+
+      <section class="stats-panel" aria-label="当前属性">
+        <div class="stats-title">
+          <h3>本周状态</h3>
+          <span id="player-chip" class="soft-badge">留学生</span>
+        </div>
+        <div id="stats-list" class="stats-list"></div>
+      </section>
+    </section>
+
+    <section id="ending-screen" class="screen">
+      <div class="ending-card">
+        <p class="eyebrow">你的墨尔本生存报告</p>
+        <div id="ending-badge" class="ending-badge">✨</div>
+        <h2 id="ending-title">结局称号</h2>
+        <p id="ending-player" class="ending-player"></p>
+        <p id="ending-description" class="ending-description"></p>
+        <div id="ending-score" class="score-pill">评分 A</div>
+        <div id="ending-stats" class="stats-list compact"></div>
+
+        <div class="share-note">
+          <p class="share-title">中文分享文案</p>
+          <p id="share-text"></p>
+        </div>
+        <p id="copy-tip" class="copy-tip" aria-live="polite"></p>
+
+        <div class="ending-actions">
+          <button id="copy-button" class="primary-button" type="button">复制我的结果</button>
+          <button id="restart-button" class="secondary-button" type="button">重新开始</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made for Melbourne international students</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
